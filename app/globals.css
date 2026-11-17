@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #08090c;
+  color: #e7e9ee;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.25);
+  color: #ecfeff;
+}
+
+/* Scrollbars -------------------------------------------------------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2b313d transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #242a34;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #313a48;
+  background-clip: content-box;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-line bg-panel shadow-panel;
+  }
+  .panel-hover {
+    @apply transition-colors duration-200 hover:border-white/15 hover:bg-panel2;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-transparent px-3.5 py-2 text-sm font-medium transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-[#04201d] hover:bg-accent-soft;
+  }
+  .btn-ghost {
+    @apply btn border-line bg-transparent text-zinc-300 hover:bg-white/5 hover:text-white;
+  }
+  .btn-subtle {
+    @apply btn bg-white/[0.04] text-zinc-300 hover:bg-white/[0.08] hover:text-white;
+  }
+  .input {
+    @apply w-full rounded-lg border border-line bg-canvas px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-accent/50 focus:outline-none focus:ring-2 focus:ring-accent/10;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-400;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-500;
+  }
+}
+
+/* Recharts ---------------------------------------------------------------- */
+.recharts-cartesian-axis-tick-value {
+  fill: #71798a;
+  font-size: 11px;
+}
+.recharts-legend-item-text {
+  color: #a1a7b5 !important;
+  font-size: 12px;
+}
+.recharts-default-tooltip {
+  background: #12151b !important;
+  border: 1px solid #2a303c !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.9) !important;
+}
+.recharts-tooltip-label {
+  color: #e7e9ee !important;
+}
+.recharts-tooltip-item {
+  color: #a1a7b5 !important;
+}
+
+.grid-fade {
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    rgba(45, 212, 191, 0.06),
+    transparent 55%
+  );
+}
