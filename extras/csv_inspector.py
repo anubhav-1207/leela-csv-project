@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-"""Standalone CSV inspector demo.
-
-This file is intentionally NOT part of the CSV Intelligence application.
-The Next.js build never imports, bundles or executes it — it simply sits in
-the repository as a small Python demonstration of CSV extraction, basic
-profiling, inline HTML generation and CSV report writing.
-
-Only the Python standard library is used. Run it directly:
-
-    python3 extras/csv_inspector.py
-    python3 extras/csv_inspector.py data.csv --html report.html --summary summary.csv
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -24,7 +10,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import TextIO
 
-# A tiny inline CSV document so the script is useful with no arguments.
 SAMPLE_CSV = """name,team,score,active,joined
 Ada,Core,98,true,2024-01-05
 Grace,Core,95,true,2024-02-11
